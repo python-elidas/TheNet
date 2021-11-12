@@ -1,4 +1,4 @@
-def set_res(cap, res='480p'):
+def set_res(cap, res):
     # Establñecemos las dimensiones validas
     std_dim = {
         '480p': (640, 480),
@@ -7,7 +7,7 @@ def set_res(cap, res='480p'):
     }
 
     # verificamos la validez del valor facilitado
-    if res not in list(std_dim.keys()):
+    if res not in std_dim:
         w, h = std_dim['480p']
     else:
         w, h = std_dim[res]
