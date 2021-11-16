@@ -40,7 +40,7 @@ while True:
     faces = face_cascade.detectMultiScale(
         gray,
         scaleFactor=1.5,
-        minNeighbors=5
+        minNeighbors=4
     )
 
     # operamos sobre los objetosd detectados:

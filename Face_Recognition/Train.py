@@ -55,8 +55,8 @@ for root, dirs, files in os.walk(image_dir):
             # Buscamos las caras en las imagenes:
             faces = face_cascade.detectMultiScale(
                 img_array,
-                scaleFactor=2,
-                minNeighbors=6
+                scaleFactor=1.5,
+                minNeighbors=5
             )
 
             # establecemos la roi
