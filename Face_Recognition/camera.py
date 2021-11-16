@@ -11,6 +11,7 @@ import numpy as np
 import cv2
 import pickle
 from Auxiliars import set_res
+import random
 
 
 # __MAIN CODE__ #
@@ -40,7 +41,7 @@ while True:
     faces = face_cascade.detectMultiScale(
         gray,
         scaleFactor=1.5,
-        minNeighbors=4
+        minNeighbors=5
     )
 
     # operamos sobre los objetosd detectados:
@@ -51,7 +52,7 @@ while True:
 
         id_, conf = recognizer.predict(roi)
         print(labels[id_], conf)
-        if conf >= 55:
+        if conf >= 35:
             # print(labels[id_], conf)
             cv2.putText(
                 frame,
@@ -59,12 +60,12 @@ while True:
                 (x+15, y-10),
                 cv2.FONT_HERSHEY_SIMPLEX,
                 1,
-                (255, 255, 0),
+                (255, 255, 120),
                 2,
                 cv2.LINE_AA
             )
 
-        color = (200, 100, 0)  # BGR
+        '''color = (200, 100, 0)  # BGR
         stroke = 2  # Grosor de la linea
         cv2.rectangle(  # Dibujamos el cuadrado
             frame,
@@ -72,7 +73,7 @@ while True:
             (x+w, y+h),  # Coordenadas en las que Termina el cuadrado
             color,
             stroke
-        )
+        )'''
 
     # Display the resulting frame
     cv2.imshow('frame', frame)
