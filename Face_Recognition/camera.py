@@ -84,11 +84,6 @@ while True:
 cap.release()
 cv2.destroyAllWindow()
 
-
-if __name__ == '__main__':
-    recording()
-
-
 # __NOTES__ #
 '''
     >
