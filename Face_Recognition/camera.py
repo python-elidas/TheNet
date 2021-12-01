@@ -29,7 +29,7 @@ with open('label.pickle', 'rb') as f:
     labels = {v: k for k, v in pickle.load(f).items()}
 
 # creamos la variable de captura
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 set_res(cap, my_res)
 
 while True:
